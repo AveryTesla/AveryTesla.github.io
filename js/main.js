@@ -4,6 +4,11 @@ $(function() {
   $("body").removeClass("fade-out");
 });
 
+// startup sound
+window.onload = function() {
+  document.getElementById("my_audio").play();
+}
+
 // button effects
 
 // button to copy text
@@ -117,7 +122,7 @@ function copy_button_iCMS_RightFax_WorkFlow_all_in_one() {
 $(document).ready(function() {
   // hide automation_tools
   $("#new_user_tools").hide();
-  $("#new_computer-setup_info").hide();
+  $("#ACS_info").hide();
   $("#iCMS_user_add_info").hide();
   $("#RightFax_user_add_info").hide();
   $("#iCMS_RightFax_WorkFlow_all_in_one_info").hide();
@@ -135,7 +140,7 @@ $(document).ready(function() {
   $("#automation_tools_button").click(function() {
     $("#new_user_tools").slideToggle("slow");
     // hide automation_tools
-    $("#new_computer-setup_info").hide();
+    $("#ACS_info").hide();
     $("#iCMS_user_add_info").hide();
     $("#RightFax_user_add_info").hide();
     $("#iCMS_RightFax_WorkFlow_all_in_one_info").hide();
@@ -149,8 +154,8 @@ $(document).ready(function() {
     $("#RightFax_info").hide();
     $("#MODI_info").hide();
   });
-  $("#new_computer-setup_button").click(function() {
-    $("#new_computer-setup_info").slideToggle("slow");
+  $("#ACS_button").click(function() {
+    $("#ACS_info").slideToggle("slow");
     // hide automation_tools
     $("#iCMS_user_add_info").hide();
     $("#RightFax_user_add_info").hide();
@@ -168,7 +173,7 @@ $(document).ready(function() {
   $("#iCMS_user_add_button").click(function() {
     $("#iCMS_user_add_info").slideToggle("slow");
     // hide automation_tools
-    $("#new_computer-setup_info").hide();
+    $("#ACS_info").hide();
     $("#RightFax_user_add_info").hide();
     $("#iCMS_RightFax_WorkFlow_all_in_one_info").hide();
     // hide investigative_tools
@@ -184,7 +189,7 @@ $(document).ready(function() {
   $("#RightFax_user_add_button").click(function() {
     $("#RightFax_user_add_info").slideToggle("slow");
     // hide automation_tools
-    $("#new_computer-setup_info").hide();
+    $("#ACS_info").hide();
     $("#iCMS_user_add_info").hide();
     $("#iCMS_RightFax_WorkFlow_all_in_one_info").hide();
     // hide investigative_tools
@@ -200,7 +205,7 @@ $(document).ready(function() {
   $("#iCMS_RightFax_WorkFlow_all_in_one_button").click(function() {
     $("#iCMS_RightFax_WorkFlow_all_in_one_info").slideToggle("slow");
     // hide automation_tools
-    $("#new_computer-setup_info").hide();
+    $("#ACS_info").hide();
     $("#iCMS_user_add_info").hide();
     $("#RightFax_user_add_info").hide();
     // hide investigative_tools
@@ -218,7 +223,7 @@ $(document).ready(function() {
     $("#investigative_tools").slideToggle("slow");
     // hide automation_tools
     $("#new_user_tools").hide();
-    $("#new_computer-setup_info").hide();
+    $("#ACS_info").hide();
     $("#iCMS_user_add_info").hide();
     $("#RightFax_user_add_info").hide();
     $("#iCMS_RightFax_WorkFlow_all_in_one_info").hide();
@@ -235,7 +240,7 @@ $(document).ready(function() {
     $("#the_watcher_info").slideToggle("slow");
     // hide automation_tools
     $("#new_user_tools").hide();
-    $("#new_computer-setup_info").hide();
+    $("#ACS_info").hide();
     $("#iCMS_user_add_info").hide();
     $("#RightFax_user_add_info").hide();
     $("#iCMS_RightFax_WorkFlow_all_in_one_info").hide();
@@ -251,7 +256,7 @@ $(document).ready(function() {
     $("#Sleuth-system_info_info").slideToggle("slow");
     // hide automation_tools
     $("#new_user_tools").hide();
-    $("#new_computer-setup_info").hide();
+    $("#ACS_info").hide();
     $("#iCMS_user_add_info").hide();
     $("#RightFax_user_add_info").hide();
     $("#iCMS_RightFax_WorkFlow_all_in_one_info").hide();
@@ -267,7 +272,7 @@ $(document).ready(function() {
     $("#Sleuth-user_info_info").slideToggle("slow");
     // hide automation_tools
     $("#new_user_tools").hide();
-    $("#new_computer-setup_info").hide();
+    $("#ACS_info").hide();
     $("#iCMS_user_add_info").hide();
     $("#RightFax_user_add_info").hide();
     $("#iCMS_RightFax_WorkFlow_all_in_one_info").hide();
@@ -284,7 +289,7 @@ $(document).ready(function() {
     $("#common_issues_and_fixes").slideToggle("slow");
     // hide automation_tools
     $("#new_user_tools").hide();
-    $("#new_computer-setup_info").hide();
+    $("#ACS_info").hide();
     $("#iCMS_user_add_info").hide();
     $("#RightFax_user_add_info").hide();
     $("#iCMS_RightFax_WorkFlow_all_in_one_info").hide();
@@ -301,7 +306,7 @@ $(document).ready(function() {
     $("#RightFax_info").slideToggle("slow");
     // hide automation_tools
     $("#new_user_tools").hide();
-    $("#new_computer-setup_info").hide();
+    $("#ACS_info").hide();
     $("#iCMS_user_add_info").hide();
     $("#RightFax_user_add_info").hide();
     $("#iCMS_RightFax_WorkFlow_all_in_one_info").hide();
@@ -317,7 +322,7 @@ $(document).ready(function() {
     $("#MODI_info").slideToggle("slow");
     // hide automation_tools
     $("#new_user_tools").hide();
-    $("#new_computer-setup_info").hide();
+    $("#ACS_info").hide();
     $("#iCMS_user_add_info").hide();
     $("#RightFax_user_add_info").hide();
     $("#iCMS_RightFax_WorkFlow_all_in_one_info").hide();
