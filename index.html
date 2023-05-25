@@ -1,7 +1,337 @@
 <!DOCTYPE html>
-<html>
-<body>
-<h1>Hello World</h1>
-<p>I'm hosted with GitHub Pages.</p>
-</body>
+<html class="no-js" lang="">
+  <head>
+    <meta charset="utf-8" />
+    <title>CAT</title>
+    <meta name="description" content="" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <link rel="manifest" href="site.webmanifest" />
+    <link rel="apple-touch-icon" href="icon.png" />
+    <!-- Place favicon.ico in the root directory -->
+
+    <link rel="stylesheet" href="css/normalize.css" />
+    <!-- <link rel="stylesheet" href="css/main.css"> -->
+    <link rel="stylesheet" href="css/main_2.css" />
+    <link rel="stylesheet" href="css/animate.min.css" />
+    <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.2/animate.min.css"> -->
+
+    <!-- <meta name="theme-color" content="#fafafa"> -->
+  </head>
+
+  <body>
+
+    <label for="check" class="btn btn-default">Toggle fur_type</label>
+    <input type="checkbox" id="check" />
+    <div class="background_button"></div>
+    <audio id="player" autoplay>
+    </audio>
+    <audio src="./sounds/Windows_95.mp3" autoplay="autoplay"></audio>
+
+    <div class="toolbar">
+
+    <div class="dropdown" style="background-color: aquamarine; font-size: xx-large;">
+        <span>start_CAT</span>
+        <div class="dropdown-content">
+            <div id="automation_tools_region">
+              <p style="border-style: inset;">
+                <button id="automation_tools_button" name="automation_tools">
+                  automation_tools
+                </button>
+                <button
+                  id="investigative_tools_button"
+                  name="investigative_tools"
+                >
+                  investigative_tools
+                </button>
+                <button
+                  id="common_issues_and_fixes_button"
+                  name="common_issues_and_fixes"
+                >
+                  common_issues_and_fixes
+                </button>
+              </p>
+
+              <div
+                id="new_user_tools"
+                style="background: rgba(5, 255, 159, 0.10);"
+              >
+                <button
+                  id="ACS_button"
+                  name="ACS_button"
+                >
+                  ACS
+                </button>
+                <button id="iCMS_user_add_button" name="iCMS_user_add_button">
+                  iCMS_user_add
+                </button>
+                <button
+                  id="RightFax_user_add_button"
+                  name="RightFax_user_add_button"
+                >
+                  RightFax_user_add
+                </button>
+                <button
+                  id="iCMS_RightFax_WorkFlow_all_in_one_button"
+                  name="iCMS_RightFax_WorkFlow_all_in_one_button"
+                >
+                  iCMS_RightFax_WorkFlow_all_in_one
+                </button>
+
+                <div
+                  id="ACS_info"
+                  style="background: rgba(5, 255, 159, 0.200);"
+                >
+                  <h3>
+                    To use: <br />
+                    Press the 'copy link' button below and follow the
+                    instructions
+                  </h3>
+                  <p>
+                    >> ACS - <u>A</u>utomated <u>C</u>omputer <u>S</u>etup 
+                    (this will install needed software and run gpupdate)
+                  </p>
+                  <button onclick="copy_button()">copy link</button>
+                  <input
+                    type="text"
+                    size="50"
+                    value="C:\CAT\CAT_portal\tools\ACS\run_me.bat"
+                    id="stuff_to_copy"
+                  />
+                  <br />
+                </div>
+                <div
+                  id="iCMS_user_add_info"
+                  style="background: rgba(5, 255, 159, 0.200);"
+                >
+                  <h3>
+                    To use: <br />
+                    Press the 'copy link' button below and follow the
+                    instructions
+                  </h3>
+                  <p>
+                    >> iCMS_user_add (tool to automagically add users to iCMS
+                    and AD -> PROD/UAT/or both)
+                  </p>
+                  <button onclick="copy_button2()">copy link</button>
+                  <input style=
+                    type="text"
+                    size="50"
+                    value="C:\CAT\CAT_portal\tools\iCMS_user_add\run_me.bat"
+                    id="stuff_to_copy2"
+                  />
+                  <br />
+                </div>
+                <div
+                  id="RightFax_user_add_info"
+                  style="background: rgba(5, 255, 159, 0.200)";
+                >
+                  <h3>
+                    To use: <br />
+                    Press the 'copy link' button below and follow the
+                    instructions
+                  </h3>
+                  <p>
+                    >> RightFax_user_add (this will create Rightfax accounts in
+                    'RightFax Enterprise Fax Manager')
+                  </p>
+                  <button onclick="copy_button3()">copy link</button>
+                  <input
+                    type="text"
+                    size="50"
+                    value="C:\CAT\CAT_portal\tools\Add-RightFax_user\run_me.bat"
+                    id="stuff_to_copy3"
+                  />
+                  <br />
+                </div>
+                <div
+                  id="iCMS_RightFax_WorkFlow_all_in_one_info"
+                  style="background: rgba(5, 255, 159, 0.200);"
+                >
+                  <h3>
+                    To use: <br />
+                    Press the 'copy link' button below and follow the
+                    instructions
+                  </h3>
+                  <p>
+                    >> iCMS_RightFax_WorkFlow_all_in_one (this will create iCMS,
+                    Rightfax accounts and pull the information needed to make
+                    Workflow accounts')
+                  </p>
+                  <button onclick="copy_button_iCMS_RightFax_WorkFlow_all_in_one()">copy link</button>
+                  <input
+                    type="text"
+                    size="50"
+                    value="C:\CAT\CAT_portal\tools\iCMS_RightFax_WorkFlow_all_in_one\run_me.bat"
+                    id="stuff_to_copy_iCMS_RightFax_WorkFlow_all_in_one"
+                  />
+                  <br />
+                </div>
+              </div>
+              <div
+                id="investigative_tools"
+                style="background: rgba(185,103,255, 0.10);"
+              >
+                <button id="the_watcher_button" name="the_watcher_button">
+                  the_watcher
+                </button>
+                <button
+                  id="Sleuth-system_info_button"
+                  name="Sleuth-system_info_button"
+                >
+                  Sleuth-system_info
+                </button>
+                <button
+                  id="Sleuth-user_info_button"
+                  name="Sleuth-user_info_button"
+                >
+                  Sleuth-user_info
+                </button>
+
+                <div
+                  id="the_watcher_info"
+                  style="background: rgba(185,103,255, 0.200);"
+                >
+                  <h3>
+                    To use: <br />
+                    Press the 'copy link' button below and follow the
+                    instructions
+                  </h3>
+                  <p>
+                    >> The Watcher (tool to watch for computers to come online)
+                  </p>
+                  <button onclick="copy_button4()">copy link</button>
+                  <input
+                    type="text"
+                    size="50"
+                    value="C:\CAT\CAT_portal\tools\the_watcher\run_me.bat"
+                    id="stuff_to_copy4"
+                  />
+                  <br />
+                </div>
+                <div
+                  id="Sleuth-system_info_info"
+                  style="background: rgba(185,103,255, 0.200);"
+                >
+                  <h3>
+                    To use: <br />
+                    Press the 'copy link' button below and follow the
+                    instructions
+                  </h3>
+                  <p>
+                    >> Sleuth - system.info (tool to get computer information)
+                  </p>
+                  <button onclick="copy_button5()">copy link</button>
+                  <input
+                    type="text"
+                    size="50"
+                    value="C:\CAT\CAT_portal\tools\Sleuth\system.info\run_me.bat"
+                    id="stuff_to_copy5"
+                  />
+                  <br />
+                </div>
+                <div
+                  id="Sleuth-user_info_info"
+                  style="background: rgba(185,103,255, 0.200);"
+                >
+                  <h3>
+                    To use: <br />
+                    Press the 'copy link' button below and follow the
+                    instructions
+                  </h3>
+                  <p>
+                    >> Sleuth - user.info (tool to get user information by EID)
+                  </p>
+                  <button onclick="copy_button6()">copy link</button>
+                  <input
+                    type="text"
+                    size="50"
+                    value="C:\CAT\CAT_portal\tools\Sleuth\user.info\run_me.bat"
+                    id="stuff_to_copy6"
+                  />
+                  <br />
+                </div>
+              </div>
+              <div
+                id="common_issues_and_fixes"
+                style="background: rgba(1,205,254, 0.10);"
+              >
+                <button id="RightFax_button" name="RightFax_button">
+                  RightFax
+                </button>
+                <button id="MODI_button" name="MODI_button">MODI</button>
+
+                <div
+                  id="RightFax_info"
+                  style="background: rgba(1,205,254, 0.200);"
+                >
+                  <img
+                    src="Riker_facepalm.png"
+                    alt="wth RightFax"
+                    style="width:256px;height:256px;"
+                  />
+                </div>
+                <div id="MODI_info" style="background: rgba(1,205,254, 0.200);">
+                  <span>
+                    <h4 style="left: 0;">Example .tif</h4>
+                    <h4 style="right: 0;">Example .tiff</h4>
+                    <img src="img/script_CAT.tif" alt="script_CAT" style="width:500px;height:500px;"></img>
+                    <img src="img/GOAT_FO_MIKE.tiff" alt="GOAT_FO_MIKE" style="width:500px;height:500px;"></img>
+                  </span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+    </div>
+</div>
+
+        <div class="logo" style="background: none;">
+          <div class="animated fadeInRight delay-3s">
+          <div 
+          class="animated fadeInDown delay-3s"
+          style="border-style: outset;"
+          >
+            <p>
+              <a href=".\index.html">
+                <img
+                  src="CAT.png"
+                  alt="StudiousStudios Automation Toolkit"
+                  style="width:256px;height:128px;"
+              /></a>
+            </p>
+            </div>
+            </div>
+          </div>
+          <div
+            class="animated bounceInUp delay-5s"
+            style="
+            border: 1px dashed black; 
+            background-color: #b4c5ff;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  max-width: 800px;
+  text-align: center;
+  margin: auto;
+            "
+          >
+            <span>2023 - StudiousStudios<br>Created by AT</span>
+          </div>
+
+    <script src="js/vendor/modernizr-3.7.1.min.js"></script>
+    <script
+      src="https://code.jquery.com/jquery-3.4.1.min.js"
+      integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
+      crossorigin="anonymous"
+    ></script>
+    <script>
+      window.jQuery ||
+        document.write(
+          '<script src="js/vendor/jquery-3.4.1.min.js"><\/script>'
+        );
+    </script>
+    <script src="js/plugins.js"></script>
+    <script src="js/main_2.js"></script>
+  </body>
 </html>
