@@ -5,9 +5,32 @@ $(function() {
 });
 
 // startup sound
-window.onload = function() {
-  document.getElementById("my_audio").play();
-}
+document.addEventListener('DOMContentLoaded', function() {
+  var audio = document.getElementById('audio');
+  var playButton = document.getElementById('playButton');
+
+  playButton.addEventListener('click', function() {
+    playButton.disabled = true; // Disable the button after it is clicked
+    audio.play();
+  });
+});
+
+// dropdownDiv and click sounds
+document.addEventListener('DOMContentLoaded', function() {
+  var audio = document.getElementById('audio_meow');
+  var dropdownDiv = document.getElementById('dropdownDiv');
+
+  dropdownDiv.addEventListener('click', function(event) {
+    if (event.target.nodeName === 'BUTTON') {
+      audio.currentTime = 0;
+      audio.play();
+    }
+  });
+});
+
+
+
+
 
 // button effects
 

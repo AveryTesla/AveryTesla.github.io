@@ -24,13 +24,15 @@
     <label for="check" class="btn btn-default">Toggle fur_type</label>
     <input type="checkbox" id="check" />
     <div class="background_button"></div>
-    <audio id="player" autoplay>
-    </audio>
-    <audio src="./sounds/Windows_95.mp3" autoplay="autoplay"></audio>
+    <button id="playButton">Click to Play Startup Sound</button>
+    <!-- <button id="audio_meow_fast_deep_Button">Click to Play Startup Sound</button> -->
+    <audio id="audio" src="sounds/startup/Windows_95.mp3"></audio>
+    <audio id="audio_meow" src="sounds/clicks/meow.mp3"></audio>
+
 
     <div class="toolbar">
 
-    <div class="dropdown" style="background-color: aquamarine; font-size: xx-large;">
+    <div id="dropdownDiv" class="dropdown" style="background-color: aquamarine; font-size: xx-large;">
         <span>start_CAT</span>
         <div class="dropdown-content">
             <div id="automation_tools_region">
@@ -295,7 +297,7 @@
             <p>
               <a href=".\index.html">
                 <img
-                  src="CAT.png"
+                  src="img/CAT.PNG"
                   alt="Computer Automation Toolkit"
                   style="width:256px;height:128px;"
               /></a>
@@ -316,7 +318,7 @@
   margin: auto;
             "
           >
-            <span>- 2023 - StudiousStudios<br>Created by AT</span>
+            <span>- 2023 - Studious_Studios<br>Created by AT</span>
           </div>
 
     <script src="js/vendor/modernizr-3.7.1.min.js"></script>

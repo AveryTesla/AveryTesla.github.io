@@ -8,16 +8,44 @@
  * Kroc Camen, and the H5BP dev community and team.
  */
 
- html {
+html {
   opacity:0.8;
   cursor: url(./nat733.cur), auto !important;
 }
 
-div.background_button{
+body, html {
+  height: 100%;
+  margin: 0;
+}
+
+.background-image {
+  background-image: url("cat_fur.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
   width: 100%;
   height: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: -1;
+}
+
+h1 {
+  color: #fff;
+  text-align: center;
+  padding-top: 100px;
+}
+
+div.background_button{
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
+  width: 100%;
+  height: 100%;
+  position: fixed;
   background-image: url("img/cat_fur.png");
-  position: absolute;
+  position: fixed;
   bottom: 0;
   right: 0;
   z-index: -1;
