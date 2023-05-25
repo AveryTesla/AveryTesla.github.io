@@ -19,14 +19,22 @@ document.addEventListener('DOMContentLoaded', function() {
 document.addEventListener('DOMContentLoaded', function() {
   var audio = document.getElementById('audio_meow');
   var dropdownDiv = document.getElementById('dropdownDiv');
+  var button = dropdownDiv.querySelector('button');
 
-  dropdownDiv.addEventListener('click', function(event) {
-    if (event.target.nodeName === 'BUTTON') {
-      audio.currentTime = 0;
-      audio.play();
+  button.addEventListener('click', function() {
+    audio.currentTime = 0;
+    var playPromise = audio.play();
+    if (playPromise !== undefined) {
+      playPromise.then(function() {
+        // Audio started playing successfully
+      }).catch(function(error) {
+        // Audio playback failed or was blocked
+        console.log('Audio playback failed:', error);
+      });
     }
   });
 });
+
 
 
 
