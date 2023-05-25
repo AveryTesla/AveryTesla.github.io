@@ -37,6 +37,22 @@ document.addEventListener('DOMContentLoaded', function() {
   }
 });
 
+// Glitch effect
+// Wait for the DOM to be ready
+document.addEventListener('DOMContentLoaded', function() {
+  // Set the glitch effect every 5 seconds
+  setInterval(function() {
+    var glitchContainer = document.querySelector('.glitch-container');
+    var glitchEffect = document.createElement('div');
+    glitchEffect.classList.add('glitch-effect');
+    glitchContainer.appendChild(glitchEffect);
+
+    // Remove the glitch effect after a short delay
+    setTimeout(function() {
+      glitchContainer.removeChild(glitchEffect);
+    }, 1000);
+  }, 5000);
+});
 
 // button effects
 
