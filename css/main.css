@@ -33,7 +33,21 @@ h1 {
   padding-top: 100px;
 }
 
-div.background_button{
+#bg {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background-image: url('img/cat_fur.png');
+  background-size: cover;
+  filter: hue-rotate(0deg);
+  transition: filter 5s ease-in-out;
+  z-index: -1;
+}
+
+
+/* div.background_button{
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center center;
@@ -41,10 +55,11 @@ div.background_button{
   height: 100%;
   position: fixed;
   background-image: url("img/cat_fur.png");
-  position: fixed;
   bottom: 0;
   right: 0;
   z-index: -1;
+  filter: hue-rotate(0deg);
+  transition: filter 5s ease-in-out;
 }
 
 label.btn {
@@ -72,7 +87,7 @@ input[type="checkbox"]:checked + div{
 
 label + input[type="checkbox"]:checked{
   background: #000;
-}
+} */
 
  body {
   opacity: 1;

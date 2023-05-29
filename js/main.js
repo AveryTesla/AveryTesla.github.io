@@ -4,16 +4,35 @@ $(function() {
   $("body").removeClass("fade-out");
 });
 
-// startup sound
-document.addEventListener('DOMContentLoaded', function() {
-  var audio = document.getElementById('audio');
-  var playButton = document.getElementById('playButton');
+// // startup sound
+// document.addEventListener('DOMContentLoaded', function() {
+//   var audio = document.getElementById('audio');
+//   var playButton = document.getElementById('playButton');
 
-  playButton.addEventListener('click', function() {
-    playButton.disabled = true; // Disable the button after it is clicked
-    audio.play();
-  });
-});
+//   playButton.addEventListener('click', function() {
+//     playButton.disabled = true; // Disable the button after it is clicked
+//     audio.play();
+//   });
+// });
+
+// Toggle Fur
+// var images = ["css/img/cat_fur.png", "css/img/cat_fur_2.png", "css/img/space_cat.png", "css/img/Riker_facepalm.PNG"]; // replace with your images
+// var currentImage = 0;
+
+// document.getElementById("changeBg").addEventListener("click", function() {
+//   currentImage++;
+//   if (currentImage === images.length) currentImage = 0;
+//   document.body.style.backgroundImage = 'url(' + images[currentImage] + ')';
+// });
+
+//fur hues
+let hue = 0;
+
+setInterval(() => {
+  hue = (hue + 1) % 360;
+  document.getElementById('bg').style.filter = `hue-rotate(${hue}deg)`;
+}, 100);
+
 
 
 // dropdownDiv and click sounds

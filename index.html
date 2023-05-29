@@ -21,9 +21,11 @@
 
   <body>
     <div id="cat"></div>
-    <label for="check" class="btn btn-default">Toggle fur_type</label>
+    <!-- <button id="changeBg">Change Background</button> -->
+    <div id="bg"></div>
+    <!-- <label for="check" class="btn btn-default">Toggle fur_type</label>
     <input type="checkbox" id="check" />
-    <div class="background_button"></div>
+    <div class="background_button"></div> -->
     <!-- <button id="playButton">Click to Play Startup Sound</button> -->
     <!-- <audio id="audio" src="sounds/startup/Windows_95.mp3"></audio> -->
     <audio id="audio_meow" src="sounds/clicks/meow.mp3"></audio> 
@@ -35,11 +37,11 @@
     var player = document.getElementById('player');
     var playButton = document.getElementById('play');
     var pauseButton = document.getElementById('pause');
-        
+
     playButton.addEventListener('click', function() {
       player.play();
     });
-    
+
     pauseButton.addEventListener('click', function() {
       player.pause();
     });
