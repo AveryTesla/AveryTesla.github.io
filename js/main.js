@@ -26,21 +26,37 @@ $(function() {
 // });
 
 //fur hues
-let hue = 0;
+// let hue = 0;
 
-setInterval(() => {
-  hue = (hue + 1) % 360;
-  document.getElementById('bg').style.filter = `hue-rotate(${hue}deg)`;
-}, 100);
+// setInterval(() => {
+//   hue = (hue + 1) % 360;
+//   document.getElementById('bg').style.filter = `hue-rotate(${hue}deg)`;
+// }, 100);
 
-
+// dropdown click then hover
+// window.onload = function() {
+//   var dropdown = document.getElementById('dropdownDiv');
+//   this.classList.add('hide');
+//   dropdown.onclick = function() {
+//       if (!this.classList.contains('show')) {
+//           this.classList.add('show');
+//       }
+//   }
+// }
 
 // dropdownDiv and click sounds
 document.addEventListener('DOMContentLoaded', function() {
   var audio = document.getElementById('audio_meow');
   var dropdownDiv = document.getElementById('dropdownDiv');
   var buttons = dropdownDiv.getElementsByTagName('button');
-
+  var streaming_audio = document.getElementById('player');
+  var pauseButton = document.getElementById('pause');
+  dropdownDiv.onmouseover = function() {
+    streaming_audio.play();
+  }
+ pauseButton.addEventListener('click', function() {
+      player.pause();
+    });
   for (var i = 0; i < buttons.length; i++) {
     buttons[i].addEventListener('click', function() {
       audio.currentTime = 0;

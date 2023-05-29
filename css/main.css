@@ -10,12 +10,31 @@
 
 html {
   opacity:0.8;
-  cursor: url(./whiterat_norm.cur), auto !important;
+  cursor: url(./whiterat_norm.cur), auto;
 }
 
 body, html {
   height: 100%;
   margin: 0;
+}
+
+body {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background-image: url('img/cat_fur.png');
+  background-size: cover;
+  z-index: -1;
+  animation-name: hueRotate;
+  animation-duration: 20s;
+  animation-iteration-count: infinite;
+  animation-play-state: running;
+}
+@keyframes hueRotate {
+  from {filter: hue-rotate(0deg);}
+  to {filter: hue-rotate(360deg);}
 }
 
 #cat {
@@ -33,7 +52,7 @@ h1 {
   padding-top: 100px;
 }
 
-#bg {
+/* #bg {
   position: fixed;
   top: 0;
   left: 0;
@@ -44,7 +63,7 @@ h1 {
   filter: hue-rotate(0deg);
   transition: filter 5s ease-in-out;
   z-index: -1;
-}
+} */
 
 
 /* div.background_button{
@@ -91,7 +110,7 @@ label + input[type="checkbox"]:checked{
 
  body {
   opacity: 1;
-  transition: 1s opacity;
+  transition: 3s opacity;
   overflow: hidden;
 }
 
@@ -261,7 +280,7 @@ textarea {
  */
 
 .hidden {
-  display: none !important;
+  display: none;
 }
 
 /*
@@ -362,11 +381,11 @@ textarea {
   *,
   *:before,
   *:after {
-    background: transparent !important;
-    color: #000 !important;
+    background: transparent;
+    color: #000;
     /* Black prints faster */
-    box-shadow: none !important;
-    text-shadow: none !important;
+    box-shadow: none;
+    text-shadow: none;
   }
   a,
   a:visited {
@@ -387,7 +406,7 @@ textarea {
     content: "";
   }
   pre {
-    white-space: pre-wrap !important;
+    white-space: pre-wrap;
   }
   pre,
   blockquote {
