@@ -24,9 +24,27 @@
     <label for="check" class="btn btn-default">Toggle fur_type</label>
     <input type="checkbox" id="check" />
     <div class="background_button"></div>
-    <button id="playButton">Click to Play Startup Sound</button>
-    <audio id="audio" src="sounds/startup/Windows_95.mp3"></audio>
-    <audio id="audio_meow" src="sounds/clicks/meow.mp3"></audio>
+    <!-- <button id="playButton">Click to Play Startup Sound</button> -->
+    <!-- <audio id="audio" src="sounds/startup/Windows_95.mp3"></audio> -->
+    <audio id="audio_meow" src="sounds/clicks/meow.mp3"></audio> 
+    <button id="play">Click Me</button>
+    <button id="pause">Pause</button>
+    <audio id="player" src="https://stream.mubert.com/b2b/v2?playlist=6.2.2&intensity=medium&pat=bXViZXJ0Zm9yc3RyZWFtZXJzLjE5NTYxNDU0LjAzZTgxNTg5NzJmMWMzM2IxM2Y2ZDVlOWQ2ZWI3MTdkYTNkOTM3NTcuMS4z.5b9324020e60f1996e315565f23bbac3eeac4b33872eb1179d713dd5a4d510e2" type="audio/mpeg"></audio>
+
+    <script>
+    var player = document.getElementById('player');
+    var playButton = document.getElementById('play');
+    var pauseButton = document.getElementById('pause');
+        
+    playButton.addEventListener('click', function() {
+      player.play();
+    });
+    
+    pauseButton.addEventListener('click', function() {
+      player.pause();
+    });
+    </script>
+
 
     <div class="toolbar">
 
@@ -124,7 +142,7 @@
                 </div>
                 <div
                   id="RightFax_user_add_info"
-                  style="background: rgba(5, 255, 159, 0.200);"
+                  style="background: rgba(5, 255, 159, 0.200)";
                 >
                   <h3>
                     To use: <br />
@@ -319,7 +337,7 @@
   margin: auto;
             "
           >
-            <span>- 2023 - Studious_Studios<br>Created by AT</span>
+            <span>_2023 - Studious_Studios_<br>Created by AT</span>
           </div>
 
     <script src="js/vendor/modernizr-3.7.1.min.js"></script>

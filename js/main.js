@@ -15,6 +15,7 @@ document.addEventListener('DOMContentLoaded', function() {
   });
 });
 
+
 // dropdownDiv and click sounds
 document.addEventListener('DOMContentLoaded', function() {
   var audio = document.getElementById('audio_meow');
@@ -77,7 +78,7 @@ $(document).ready(function() {
     $('#cat').css('left', catX + direction * 0 + 'px');  /* Adjust the '5' to change the speed */
     $('#cat').css('transform', 'scaleX(' + direction + ')');  /* Flip the cat */
 
-    // // Move the cat vertically
+    // Move the cat vertically
     if (mouseY < catY) {
       $('#cat').css('top', catY - 1 + 'px');  /* Adjust the '5' to change the speed */
     } else if (mouseY > catY + catHeight) {
