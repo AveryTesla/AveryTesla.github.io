@@ -54,6 +54,83 @@ document.addEventListener('DOMContentLoaded', function() {
   }, 5000);
 });
 
+// Cat walk
+$(document).ready(function() {
+  var direction = 1;  /* 1 = right, -1 = left */
+
+  function walk(event) {
+    var mouseX = event.pageX;
+    var mouseY = event.pageY;
+    var catX = $('#cat').position().left;
+    var catY = $('#cat').position().top;
+    var catWidth = $('#cat').width();
+    var catHeight = $('#cat').height();
+
+    // Determine the direction the cat should move based on the mouse's position
+    if (mouseX < catX) {
+      direction = -1;
+    } else if (mouseX > catX + catWidth) {
+      direction = 1;
+    }
+
+    // Move the cat horizontally
+    $('#cat').css('left', catX + direction * 0 + 'px');  /* Adjust the '5' to change the speed */
+    $('#cat').css('transform', 'scaleX(' + direction + ')');  /* Flip the cat */
+
+    // // Move the cat vertically
+    if (mouseY < catY) {
+      $('#cat').css('top', catY - 1 + 'px');  /* Adjust the '5' to change the speed */
+    } else if (mouseY > catY + catHeight) {
+      $('#cat').css('top', catY + 1 + 'px');  /* Adjust the '5' to change the speed */
+    }
+  }
+
+  $(document).mousemove(walk);  /* Update the cat's position whenever the mouse moves */
+});
+
+let idleTimer = null;
+let idleState = false;
+
+window.addEventListener('mousemove', function() {
+  clearTimeout(idleTimer);
+
+  if (idleState == true) {
+    // The user has moved the mouse, stop the cat from moving
+    stopCat();
+  }
+
+  idleState = false;
+
+  idleTimer = setTimeout(function() {
+    // The user has been idle for 3 seconds, start the cat moving
+    idleState = true; 
+    moveCat();
+  }, 300);
+});
+
+function moveCat() {
+  let cat = document.getElementById('cat');
+  let maxX = window.innerWidth - cat.offsetWidth;
+  let maxY = window.innerHeight - cat.offsetHeight;
+  let randomX = Math.floor(Math.random() * maxX);
+  let randomY = Math.floor(Math.random() * maxY);
+
+  cat.style.left = randomX + 'px';
+  cat.style.top = randomY + 'px';
+
+  // Move cat again after transition ends
+  cat.addEventListener('transitionend', function() {
+    moveCat();
+  }, { once: true });
+}
+
+function stopCat() {
+  let cat = document.getElementById('cat');
+  cat.style.left = cat.offsetLeft + 'px';
+  cat.style.top = cat.offsetTop + 'px';
+}
+
+
 // button effects
 
 // button to copy text

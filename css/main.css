@@ -8,9 +8,9 @@
  * Kroc Camen, and the H5BP dev community and team.
  */
 
- html {
+html {
   opacity:0.8;
-  cursor: url(./nat733.cur), auto !important;
+  cursor: url(./whiterat_norm3.cur), auto !important;
 }
 
 body, html {
@@ -18,17 +18,13 @@ body, html {
   margin: 0;
 }
 
-.background-image {
-  background-image: url("cat_fur.jpg");
+#cat {
+  position: absolute;
+  width: 100px;  /* Adjust these values to match your sprite */
+  height: 100px;
+  background: url('cat-sprite.png');
   background-size: cover;
-  background-repeat: no-repeat;
-  background-position: center center;
-  width: 100%;
-  height: 100%;
-  position: fixed;
-  top: 0;
-  left: 0;
-  z-index: -1;
+  transition: left 10s ease-in-out, top 10s ease-in-out; /* Adjust timing as needed */
 }
 
 h1 {
