@@ -44,19 +44,34 @@ $(function() {
 //   }
 // }
 
+
 // dropdownDiv and click sounds
 document.addEventListener('DOMContentLoaded', function() {
   var audio = document.getElementById('audio_meow');
   var dropdownDiv = document.getElementById('dropdownDiv');
   var buttons = dropdownDiv.getElementsByTagName('button');
-  var streaming_audio = document.getElementById('player');
+  // var streaming_audio = document.getElementById('player');
   var pauseButton = document.getElementById('pause');
-  dropdownDiv.onmouseover = function() {
-    streaming_audio.play();
-  }
+  // dropdownDiv.onmouseover = function() {
+  //   player.play();
+  // }
+
+
+  let userInteracted = false;
+
+  window.addEventListener('click', function() {
+    if(!userInteracted) {
+      // var audio = document.getElementById('audioPlayer');
+      player.play();
+      userInteracted = true;
+    }
+  });
+
  pauseButton.addEventListener('click', function() {
       player.pause();
     });
+
+// meow on button click
   for (var i = 0; i < buttons.length; i++) {
     buttons[i].addEventListener('click', function() {
       audio.currentTime = 0;
@@ -72,6 +87,108 @@ document.addEventListener('DOMContentLoaded', function() {
     });
   }
 });
+
+// // Cycle through streams
+let streams = ["https://stream.mubert.com/b2b/v2?playlist=6.2.2&intensity=medium&pat=bXViZXJ0Zm9yc3RyZWFtZXJzLjE5NTYxNDU0LjAzZTgxNTg5NzJmMWMzM2IxM2Y2ZDVlOWQ2ZWI3MTdkYTNkOTM3NTcuMS4z.5b9324020e60f1996e315565f23bbac3eeac4b33872eb1179d713dd5a4d510e2", "https://stream.mubert.com/b2b/v2?playlist=6.5&intensity=medium&pat=bXViZXJ0Zm9yc3RyZWFtZXJzLjE5NTc0NTU5LjAzZTgxNTg5NzJmMWMzM2IxM2Y2ZDVlOWQ2ZWI3MTdkYTNkOTM3NTcuMS4z.77d61fae30867ed65837e1d7557dff647135dff5971aecd287b99510a072efc8", "https://stream.mubert.com/b2b/v2?playlist=6.2.1&intensity=medium&pat=bXViZXJ0Zm9yc3RyZWFtZXJzLjE5NTc0NTU5LjAzZTgxNTg5NzJmMWMzM2IxM2Y2ZDVlOWQ2ZWI3MTdkYTNkOTM3NTcuMS4z.77d61fae30867ed65837e1d7557dff647135dff5971aecd287b99510a072efc8", "https://stream.mubert.com/b2b/v2?playlist=6.4.3&intensity=medium&pat=bXViZXJ0Zm9yc3RyZWFtZXJzLjE5NTc0NTU5LjAzZTgxNTg5NzJmMWMzM2IxM2Y2ZDVlOWQ2ZWI3MTdkYTNkOTM3NTcuMS4z.77d61fae30867ed65837e1d7557dff647135dff5971aecd287b99510a072efc8"];
+let currentStreamIndex = 0;
+
+let audioPlayer = new Audio(streams[currentStreamIndex]);
+
+// document.getElementById("dropdownDiv").addEventListener("onmouseover", function() {
+//     streaming_audio.play();
+// });
+
+document.getElementById("nextButton").addEventListener("click", function() {
+  player.pause();
+    currentStreamIndex++;
+    if (currentStreamIndex >= streams.length) {
+        currentStreamIndex = 0;  // Go back to the first stream if we've reached the end
+    }
+    player = new Audio(streams[currentStreamIndex]);
+    player.play();
+});
+
+//volume up and down for stream
+document.getElementById('volUp').addEventListener('click', function () {
+  // var audio = document.getElementById('Player');
+  if (player.volume < 1.0) {
+      if (player.volume <= 0.9) {
+          player.volume += 0.1;
+      } else {
+          player.volume = 1.0;
+      }
+  }
+});
+
+document.getElementById('volDown').addEventListener('click', function () {
+  // var audio = document.getElementById('Player');
+  if (player.volume > 0.0) {
+      if (player.volume >= 0.1) {
+          player.volume -= 0.1;
+      } else {
+          player.volume = 0.0;
+      }
+  }
+});
+
+// Ticker at bottom
+// Assuming 'streams' is your array of streams
+// var currentStreamIndex_ticker = 0; // Start with the first stream
+
+// Function to update the ticker
+// function updateTicker() {
+//     var tickerDiv = document.getElementById('ticker');
+//     tickerDiv.innerText = 'Currently playing: ' + streams[currentStreamIndex].name;
+// }
+
+// // Call updateTicker whenever you change the stream
+// updateTicker();
+
+// flip page every minute for 7 seconds and then flip back
+setInterval(function() {
+  document.body.style.transform = 'rotate(180deg)';
+  setTimeout(function() {
+    document.body.style.transform = '';
+  }, 7000);
+}, 60000);
+
+// sound follows cursor
+// Create AudioContext and PannerNode
+// let audioCtx = new (window.AudioContext || window.webkitAudioContext)();
+// let panner = audioCtx.createPanner();
+
+// // Load audio
+// // let audioElement = document.querySelector('player');
+// let audioSrc = audioCtx.createMediaElementSource(player);
+// audioSrc.connect(panner);
+// panner.connect(audioCtx.destination);
+
+// // Function to update panning based on mouse position
+// window.onmousemove = (e) => {
+//   let x = e.clientX / window.innerWidth;
+//   let y = e.clientY / window.innerHeight;
+  
+//   // Set panning. -1 is left, 1 is right. 
+//   panner.pan.value = (x - 0.5) * 2;
+// };
+
+// Start audio
+// player.play();
+
+
+// var currentStreamIndex_ticker = 0;
+
+// function changeStream() {
+//   currentStreamIndex_ticker = (currentStreamIndex_ticker + 1) % streams.length;
+//   // var audioPlayer = document.getElementById('audioPlayer');
+//   Player.src = streams_ticker[currentStreamIndex_ticker].url;
+//   document.getElementById('ticker').textContent = "Now playing: " + streams_ticker[currentStreamIndex_ticker].name;
+// }
+
+// Call this function to start the first stream
+// changeStream();
+
+
 
 // Glitch effect
 // Wait for the DOM to be ready
