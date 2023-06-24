@@ -15,7 +15,12 @@ html {
 
 body, html {
   height: 100%;
-  margin: 0;
+  /* margin: 0; */
+  /* background: #000000; */
+  /* overflow: hidden; */
+  /* display: flex; */
+  /* align-items: center; */
+  /* justify-content: center; */
 }
 
 body {
@@ -111,7 +116,7 @@ label + input[type="checkbox"]:checked{
  body {
   opacity: 1;
   transition: 3s opacity;
-  overflow: hidden;
+  /* overflow: hidden; */
 }
 
 body.fade-out {

@@ -4,17 +4,6 @@ $(function() {
   $("body").removeClass("fade-out");
 });
 
-// // startup sound
-// document.addEventListener('DOMContentLoaded', function() {
-//   var audio = document.getElementById('audio');
-//   var playButton = document.getElementById('playButton');
-
-//   playButton.addEventListener('click', function() {
-//     playButton.disabled = true; // Disable the button after it is clicked
-//     audio.play();
-//   });
-// });
-
 // Toggle Fur
 // var images = ["css/img/cat_fur.png", "css/img/cat_fur_2.png", "css/img/space_cat.png", "css/img/Riker_facepalm.PNG"]; // replace with your images
 // var currentImage = 0;
@@ -25,43 +14,16 @@ $(function() {
 //   document.body.style.backgroundImage = 'url(' + images[currentImage] + ')';
 // });
 
-//fur hues
-// let hue = 0;
-
-// setInterval(() => {
-//   hue = (hue + 1) % 360;
-//   document.getElementById('bg').style.filter = `hue-rotate(${hue}deg)`;
-// }, 100);
-
-// dropdown click then hover
-// window.onload = function() {
-//   var dropdown = document.getElementById('dropdownDiv');
-//   this.classList.add('hide');
-//   dropdown.onclick = function() {
-//       if (!this.classList.contains('show')) {
-//           this.classList.add('show');
-//       }
-//   }
-// }
-
-
 // dropdownDiv and click sounds
 document.addEventListener('DOMContentLoaded', function() {
   var audio = document.getElementById('audio_meow');
   var dropdownDiv = document.getElementById('dropdownDiv');
   var buttons = dropdownDiv.getElementsByTagName('button');
-  // var streaming_audio = document.getElementById('player');
   var pauseButton = document.getElementById('pause');
-  // dropdownDiv.onmouseover = function() {
-  //   player.play();
-  // }
-
-
   let userInteracted = false;
 
   window.addEventListener('click', function() {
     if(!userInteracted) {
-      // var audio = document.getElementById('audioPlayer');
       player.play();
       userInteracted = true;
     }
@@ -88,15 +50,12 @@ document.addEventListener('DOMContentLoaded', function() {
   }
 });
 
-// // Cycle through streams
+// audio buttons
+// Cycle through streams
 let streams = ["https://stream.mubert.com/b2b/v2?playlist=6.2.2&intensity=medium&pat=bXViZXJ0Zm9yc3RyZWFtZXJzLjE5NTYxNDU0LjAzZTgxNTg5NzJmMWMzM2IxM2Y2ZDVlOWQ2ZWI3MTdkYTNkOTM3NTcuMS4z.5b9324020e60f1996e315565f23bbac3eeac4b33872eb1179d713dd5a4d510e2", "https://stream.mubert.com/b2b/v2?playlist=6.5&intensity=medium&pat=bXViZXJ0Zm9yc3RyZWFtZXJzLjE5NTc0NTU5LjAzZTgxNTg5NzJmMWMzM2IxM2Y2ZDVlOWQ2ZWI3MTdkYTNkOTM3NTcuMS4z.77d61fae30867ed65837e1d7557dff647135dff5971aecd287b99510a072efc8", "https://stream.mubert.com/b2b/v2?playlist=6.2.1&intensity=medium&pat=bXViZXJ0Zm9yc3RyZWFtZXJzLjE5NTc0NTU5LjAzZTgxNTg5NzJmMWMzM2IxM2Y2ZDVlOWQ2ZWI3MTdkYTNkOTM3NTcuMS4z.77d61fae30867ed65837e1d7557dff647135dff5971aecd287b99510a072efc8", "https://stream.mubert.com/b2b/v2?playlist=6.4.3&intensity=medium&pat=bXViZXJ0Zm9yc3RyZWFtZXJzLjE5NTc0NTU5LjAzZTgxNTg5NzJmMWMzM2IxM2Y2ZDVlOWQ2ZWI3MTdkYTNkOTM3NTcuMS4z.77d61fae30867ed65837e1d7557dff647135dff5971aecd287b99510a072efc8"];
 let currentStreamIndex = 0;
 
 let audioPlayer = new Audio(streams[currentStreamIndex]);
-
-// document.getElementById("dropdownDiv").addEventListener("onmouseover", function() {
-//     streaming_audio.play();
-// });
 
 document.getElementById("nextButton").addEventListener("click", function() {
   player.pause();
